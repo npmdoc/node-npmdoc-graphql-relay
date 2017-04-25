@@ -1,0 +1,1456 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/graphql/graphql-relay-js">graphql-relay (v0.5.1)</a>
+</h1>
+<h4>A library to help construct a graphql-js server supporting react-relay.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.graphql-relay">module graphql-relay</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.connectionDefinitions">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>connectionDefinitions
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.connectionFromArray">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>connectionFromArray
+            <span class="apidocSignatureSpan">(data, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.connectionFromArraySlice">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>connectionFromArraySlice
+            <span class="apidocSignatureSpan">(arraySlice, args, meta)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.connectionFromPromisedArray">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>connectionFromPromisedArray
+            <span class="apidocSignatureSpan">(dataPromise, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.connectionFromPromisedArraySlice">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>connectionFromPromisedArraySlice
+            <span class="apidocSignatureSpan">(dataPromise, args, arrayInfo)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.cursorForObjectInConnection">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>cursorForObjectInConnection
+            <span class="apidocSignatureSpan">(data, object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.cursorToOffset">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>cursorToOffset
+            <span class="apidocSignatureSpan">(cursor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.fromGlobalId">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>fromGlobalId
+            <span class="apidocSignatureSpan">(globalId)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.getOffsetWithDefault">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>getOffsetWithDefault
+            <span class="apidocSignatureSpan">(cursor, defaultOffset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.globalIdField">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>globalIdField
+            <span class="apidocSignatureSpan">(typeName, idFetcher)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.mutationWithClientMutationId">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>mutationWithClientMutationId
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.nodeDefinitions">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>nodeDefinitions
+            <span class="apidocSignatureSpan">(idFetcher, typeResolver)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.offsetToCursor">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>offsetToCursor
+            <span class="apidocSignatureSpan">(offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.pluralIdentifyingRootField">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>pluralIdentifyingRootField
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.toGlobalId">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>toGlobalId
+            <span class="apidocSignatureSpan">(type, id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graphql-relay.</span>arrayconnection</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graphql-relay.</span>backwardConnectionArgs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graphql-relay.</span>base64</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graphql-relay.</span>connection</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graphql-relay.</span>connectionArgs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graphql-relay.</span>forwardConnectionArgs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graphql-relay.</span>mutation</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graphql-relay.</span>node</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graphql-relay.</span>plural</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.graphql-relay.arrayconnection">module graphql-relay.arrayconnection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.arrayconnection.connectionFromArray">
+            function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>connectionFromArray
+            <span class="apidocSignatureSpan">(data, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.arrayconnection.connectionFromArraySlice">
+            function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>connectionFromArraySlice
+            <span class="apidocSignatureSpan">(arraySlice, args, meta)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.arrayconnection.connectionFromPromisedArray">
+            function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>connectionFromPromisedArray
+            <span class="apidocSignatureSpan">(dataPromise, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.arrayconnection.connectionFromPromisedArraySlice">
+            function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>connectionFromPromisedArraySlice
+            <span class="apidocSignatureSpan">(dataPromise, args, arrayInfo)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.arrayconnection.cursorForObjectInConnection">
+            function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>cursorForObjectInConnection
+            <span class="apidocSignatureSpan">(data, object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.arrayconnection.cursorToOffset">
+            function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>cursorToOffset
+            <span class="apidocSignatureSpan">(cursor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.arrayconnection.getOffsetWithDefault">
+            function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>getOffsetWithDefault
+            <span class="apidocSignatureSpan">(cursor, defaultOffset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.arrayconnection.offsetToCursor">
+            function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>offsetToCursor
+            <span class="apidocSignatureSpan">(offset)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.graphql-relay.base64">module graphql-relay.base64</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.base64.base64">
+            function <span class="apidocSignatureSpan">graphql-relay.</span>base64
+            <span class="apidocSignatureSpan">(i)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.base64.unbase64">
+            function <span class="apidocSignatureSpan">graphql-relay.base64.</span>unbase64
+            <span class="apidocSignatureSpan">(i)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.graphql-relay.connection">module graphql-relay.connection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.connection.connectionDefinitions">
+            function <span class="apidocSignatureSpan">graphql-relay.connection.</span>connectionDefinitions
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graphql-relay.connection.</span>backwardConnectionArgs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graphql-relay.connection.</span>connectionArgs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graphql-relay.connection.</span>forwardConnectionArgs</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.graphql-relay.mutation">module graphql-relay.mutation</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.mutation.mutationWithClientMutationId">
+            function <span class="apidocSignatureSpan">graphql-relay.mutation.</span>mutationWithClientMutationId
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.graphql-relay.node">module graphql-relay.node</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.node.fromGlobalId">
+            function <span class="apidocSignatureSpan">graphql-relay.node.</span>fromGlobalId
+            <span class="apidocSignatureSpan">(globalId)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.node.globalIdField">
+            function <span class="apidocSignatureSpan">graphql-relay.node.</span>globalIdField
+            <span class="apidocSignatureSpan">(typeName, idFetcher)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.node.nodeDefinitions">
+            function <span class="apidocSignatureSpan">graphql-relay.node.</span>nodeDefinitions
+            <span class="apidocSignatureSpan">(idFetcher, typeResolver)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.node.toGlobalId">
+            function <span class="apidocSignatureSpan">graphql-relay.node.</span>toGlobalId
+            <span class="apidocSignatureSpan">(type, id)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.graphql-relay.plural">module graphql-relay.plural</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graphql-relay.plural.pluralIdentifyingRootField">
+            function <span class="apidocSignatureSpan">graphql-relay.plural.</span>pluralIdentifyingRootField
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.graphql-relay" id="apidoc.module.graphql-relay">module graphql-relay</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.connectionDefinitions" id="apidoc.element.graphql-relay.connectionDefinitions">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>connectionDefinitions
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function connectionDefinitions(config) {
+  var nodeType = config.nodeType;
+
+  var name = config.name || nodeType.name;
+  var edgeFields = config.edgeFields || {};
+  var connectionFields = config.connectionFields || {};
+  var resolveNode = config.resolveNode;
+  var resolveCursor = config.resolveCursor;
+  var edgeType = new _graphql.GraphQLObjectType({
+    name: name + 'Edge',
+    description: 'An edge in a connection.',
+    fields: function fields() {
+      return _extends({
+        node: {
+          type: nodeType,
+          resolve: resolveNode,
+          description: 'The item at the end of the edge'
+        },
+        cursor: {
+          type: new _graphql.GraphQLNonNull(_graphql.GraphQLString),
+          resolve: resolveCursor,
+          description: 'A cursor for use in pagination'
+        }
+      }, resolveMaybeThunk(edgeFields));
+    }
+  });
+
+  var connectionType = new _graphql.GraphQLObjectType({
+    name: name + 'Connection',
+    description: 'A connection to a list of items.',
+    fields: function fields() {
+      return _extends({
+        pageInfo: {
+          type: new _graphql.GraphQLNonNull(pageInfoType),
+          description: 'Information to aid in pagination.'
+        },
+        edges: {
+          type: new _graphql.GraphQLList(edgeType),
+          description: 'A list of edges.'
+        }
+      }, resolveMaybeThunk(connectionFields));
+    }
+  });
+
+  return { edgeType: edgeType, connectionType: connectionType };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.connectionFromArray" id="apidoc.element.graphql-relay.connectionFromArray">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>connectionFromArray
+        <span class="apidocSignatureSpan">(data, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function connectionFromArray(data, args) {
+  return connectionFromArraySlice(data, args, {
+    sliceStart: 0,
+    arrayLength: data.length
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.connectionFromArraySlice" id="apidoc.element.graphql-relay.connectionFromArraySlice">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>connectionFromArraySlice
+        <span class="apidocSignatureSpan">(arraySlice, args, meta)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function connectionFromArraySlice(arraySlice, args, meta) {
+  var after = args.after,
+      before = args.before,
+      first = args.first,
+      last = args.last;
+  var sliceStart = meta.sliceStart,
+      arrayLength = meta.arrayLength;
+
+  var sliceEnd = sliceStart + arraySlice.length;
+  var beforeOffset = getOffsetWithDefault(before, arrayLength);
+  var afterOffset = getOffsetWithDefault(after, -1);
+
+  var startOffset = Math.max(sliceStart - 1, afterOffset, -1) + 1;
+  var endOffset = Math.min(sliceEnd, beforeOffset, arrayLength);
+  if (typeof first === 'number') {
+    if (first &lt; 0) {
+      throw new Error('Argument "first" must be a non-negative integer');
+    }
+
+    endOffset = Math.min(endOffset, startOffset + first);
+  }
+  if (typeof last === 'number') {
+    if (last &lt; 0) {
+      throw new Error('Argument "last" must be a non-negative integer');
+    }
+
+    startOffset = Math.max(startOffset, endOffset - last);
+  }
+
+  // If supplied slice is too large, trim it down before mapping over it.
+  var slice = arraySlice.slice(Math.max(startOffset - sliceStart, 0), arraySlice.length - (sliceEnd - endOffset));
+
+  var edges = slice.map(function (value, index) {
+    return {
+      cursor: offsetToCursor(startOffset + index),
+      node: value
+    };
+  });
+
+  var firstEdge = edges[0];
+  var lastEdge = edges[edges.length - 1];
+  var lowerBound = after ? afterOffset + 1 : 0;
+  var upperBound = before ? beforeOffset : arrayLength;
+  return {
+    edges: edges,
+    pageInfo: {
+      startCursor: firstEdge ? firstEdge.cursor : null,
+      endCursor: lastEdge ? lastEdge.cursor : null,
+      hasPreviousPage: typeof last === 'number' ? startOffset &gt; lowerBound : false,
+      hasNextPage: typeof first === 'number' ? endOffset &lt; upperBound : false
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.connectionFromPromisedArray" id="apidoc.element.graphql-relay.connectionFromPromisedArray">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>connectionFromPromisedArray
+        <span class="apidocSignatureSpan">(dataPromise, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function connectionFromPromisedArray(dataPromise, args) {
+  return dataPromise.then(function (data) {
+    return connectionFromArray(data, args);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.connectionFromPromisedArraySlice" id="apidoc.element.graphql-relay.connectionFromPromisedArraySlice">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>connectionFromPromisedArraySlice
+        <span class="apidocSignatureSpan">(dataPromise, args, arrayInfo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function connectionFromPromisedArraySlice(dataPromise, args, arrayInfo) {
+  return dataPromise.then(function (data) {
+    return connectionFromArraySlice(data, args, arrayInfo);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.cursorForObjectInConnection" id="apidoc.element.graphql-relay.cursorForObjectInConnection">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>cursorForObjectInConnection
+        <span class="apidocSignatureSpan">(data, object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cursorForObjectInConnection(data, object) {
+  var offset = data.indexOf(object);
+  if (offset === -1) {
+    return null;
+  }
+  return offsetToCursor(offset);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.cursorToOffset" id="apidoc.element.graphql-relay.cursorToOffset">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>cursorToOffset
+        <span class="apidocSignatureSpan">(cursor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cursorToOffset(cursor) {
+  return parseInt((0, _base.unbase64)(cursor).substring(PREFIX.length), 10);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.fromGlobalId" id="apidoc.element.graphql-relay.fromGlobalId">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>fromGlobalId
+        <span class="apidocSignatureSpan">(globalId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fromGlobalId(globalId) {
+  var unbasedGlobalId = (0, _base.unbase64)(globalId);
+  var delimiterPos = unbasedGlobalId.indexOf(':');
+  return {
+    type: unbasedGlobalId.substring(0, delimiterPos),
+    id: unbasedGlobalId.substring(delimiterPos + 1)
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.getOffsetWithDefault" id="apidoc.element.graphql-relay.getOffsetWithDefault">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>getOffsetWithDefault
+        <span class="apidocSignatureSpan">(cursor, defaultOffset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getOffsetWithDefault(cursor, defaultOffset) {
+  if (typeof cursor !== 'string') {
+    return defaultOffset;
+  }
+  var offset = cursorToOffset(cursor);
+  return isNaN(offset) ? defaultOffset : offset;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.globalIdField" id="apidoc.element.graphql-relay.globalIdField">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>globalIdField
+        <span class="apidocSignatureSpan">(typeName, idFetcher)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function globalIdField(typeName, idFetcher) {
+  return {
+    name: 'id',
+    description: 'The ID of an object',
+    type: new _graphql.GraphQLNonNull(_graphql.GraphQLID),
+    resolve: function resolve(obj, args, context, info) {
+      return toGlobalId(typeName || info.parentType.name, idFetcher ? idFetcher(obj, context, info) : obj.id);
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.mutationWithClientMutationId" id="apidoc.element.graphql-relay.mutationWithClientMutationId">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>mutationWithClientMutationId
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mutationWithClientMutationId(config) {
+  var name = config.name,
+      description = config.description,
+      deprecationReason = config.deprecationReason,
+      inputFields = config.inputFields,
+      outputFields = config.outputFields,
+      mutateAndGetPayload = config.mutateAndGetPayload;
+
+  var augmentedInputFields = function augmentedInputFields() {
+    return _extends({}, resolveMaybeThunk(inputFields), {
+      clientMutationId: {
+        type: _graphql.GraphQLString
+      }
+    });
+  };
+  var augmentedOutputFields = function augmentedOutputFields() {
+    return _extends({}, resolveMaybeThunk(outputFields), {
+      clientMutationId: {
+        type: _graphql.GraphQLString
+      }
+    });
+  };
+
+  var outputType = new _graphql.GraphQLObjectType({
+    name: name + 'Payload',
+    fields: augmentedOutputFields
+  });
+
+  var inputType = new _graphql.GraphQLInputObjectType({
+    name: name + 'Input',
+    fields: augmentedInputFields
+  });
+
+  return {
+    type: outputType,
+    description: description,
+    deprecationReason: deprecationReason,
+    args: {
+      input: { type: new _graphql.GraphQLNonNull(inputType) }
+    },
+    resolve: function resolve(_, _ref, context, info) {
+      var input = _ref.input;
+
+      return Promise.resolve(mutateAndGetPayload(input, context, info)).then(function (payload) {
+        payload.clientMutationId = input.clientMutationId;
+        return payload;
+      });
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.nodeDefinitions" id="apidoc.element.graphql-relay.nodeDefinitions">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>nodeDefinitions
+        <span class="apidocSignatureSpan">(idFetcher, typeResolver)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function nodeDefinitions(idFetcher, typeResolver) {
+  var nodeInterface = new _graphql.GraphQLInterfaceType({
+    name: 'Node',
+    description: 'An object with an ID',
+    fields: function fields() {
+      return {
+        id: {
+          type: new _graphql.GraphQLNonNull(_graphql.GraphQLID),
+          description: 'The id of the object.'
+        }
+      };
+    },
+    resolveType: typeResolver
+  });
+
+  var nodeField = {
+    name: 'node',
+    description: 'Fetches an object given its ID',
+    type: nodeInterface,
+    args: {
+      id: {
+        type: new _graphql.GraphQLNonNull(_graphql.GraphQLID),
+        description: 'The ID of an object'
+      }
+    },
+    resolve: function resolve(obj, _ref, context, info) {
+      var id = _ref.id;
+      return idFetcher(id, context, info);
+    }
+  };
+
+  var nodesField = {
+    name: 'nodes',
+    description: 'Fetches objects given their IDs',
+    type: new _graphql.GraphQLNonNull(new _graphql.GraphQLList(nodeInterface)),
+    args: {
+      ids: {
+        type: new _graphql.GraphQLNonNull(new _graphql.GraphQLList(new _graphql.GraphQLNonNull(_graphql.GraphQLID))),
+        description: 'The IDs of objects'
+      }
+    },
+    resolve: function resolve(obj, _ref2, context, info) {
+      var ids = _ref2.ids;
+      return Promise.all(ids.map(function (id) {
+        return Promise.resolve(idFetcher(id, context, info));
+      }));
+    }
+  };
+
+  return { nodeInterface: nodeInterface, nodeField: nodeField, nodesField: nodesField };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.offsetToCursor" id="apidoc.element.graphql-relay.offsetToCursor">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>offsetToCursor
+        <span class="apidocSignatureSpan">(offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function offsetToCursor(offset) {
+  return (0, _base.base64)(PREFIX + offset);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.pluralIdentifyingRootField" id="apidoc.element.graphql-relay.pluralIdentifyingRootField">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>pluralIdentifyingRootField
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pluralIdentifyingRootField(config) {
+  var inputArgs = {};
+  var inputType = config.inputType;
+  if (inputType instanceof _graphql.GraphQLNonNull) {
+    inputType = inputType.ofType;
+  }
+  inputArgs[config.argName] = {
+    type: new _graphql.GraphQLNonNull(new _graphql.GraphQLList(new _graphql.GraphQLNonNull(inputType)))
+  };
+  return {
+    description: config.description,
+    type: new _graphql.GraphQLList(config.outputType),
+    args: inputArgs,
+    resolve: function resolve(obj, args, context, info) {
+      var inputs = args[config.argName];
+      return Promise.all(inputs.map(function (input) {
+        return Promise.resolve(config.resolveSingleInput(input, context, info));
+      }));
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.toGlobalId" id="apidoc.element.graphql-relay.toGlobalId">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>toGlobalId
+        <span class="apidocSignatureSpan">(type, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toGlobalId(type, id) {
+  return (0, _base.base64)([type, id].join(':'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.graphql-relay.arrayconnection" id="apidoc.module.graphql-relay.arrayconnection">module graphql-relay.arrayconnection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.arrayconnection.connectionFromArray" id="apidoc.element.graphql-relay.arrayconnection.connectionFromArray">
+        function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>connectionFromArray
+        <span class="apidocSignatureSpan">(data, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function connectionFromArray(data, args) {
+  return connectionFromArraySlice(data, args, {
+    sliceStart: 0,
+    arrayLength: data.length
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.arrayconnection.connectionFromArraySlice" id="apidoc.element.graphql-relay.arrayconnection.connectionFromArraySlice">
+        function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>connectionFromArraySlice
+        <span class="apidocSignatureSpan">(arraySlice, args, meta)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function connectionFromArraySlice(arraySlice, args, meta) {
+  var after = args.after,
+      before = args.before,
+      first = args.first,
+      last = args.last;
+  var sliceStart = meta.sliceStart,
+      arrayLength = meta.arrayLength;
+
+  var sliceEnd = sliceStart + arraySlice.length;
+  var beforeOffset = getOffsetWithDefault(before, arrayLength);
+  var afterOffset = getOffsetWithDefault(after, -1);
+
+  var startOffset = Math.max(sliceStart - 1, afterOffset, -1) + 1;
+  var endOffset = Math.min(sliceEnd, beforeOffset, arrayLength);
+  if (typeof first === 'number') {
+    if (first &lt; 0) {
+      throw new Error('Argument "first" must be a non-negative integer');
+    }
+
+    endOffset = Math.min(endOffset, startOffset + first);
+  }
+  if (typeof last === 'number') {
+    if (last &lt; 0) {
+      throw new Error('Argument "last" must be a non-negative integer');
+    }
+
+    startOffset = Math.max(startOffset, endOffset - last);
+  }
+
+  // If supplied slice is too large, trim it down before mapping over it.
+  var slice = arraySlice.slice(Math.max(startOffset - sliceStart, 0), arraySlice.length - (sliceEnd - endOffset));
+
+  var edges = slice.map(function (value, index) {
+    return {
+      cursor: offsetToCursor(startOffset + index),
+      node: value
+    };
+  });
+
+  var firstEdge = edges[0];
+  var lastEdge = edges[edges.length - 1];
+  var lowerBound = after ? afterOffset + 1 : 0;
+  var upperBound = before ? beforeOffset : arrayLength;
+  return {
+    edges: edges,
+    pageInfo: {
+      startCursor: firstEdge ? firstEdge.cursor : null,
+      endCursor: lastEdge ? lastEdge.cursor : null,
+      hasPreviousPage: typeof last === 'number' ? startOffset &gt; lowerBound : false,
+      hasNextPage: typeof first === 'number' ? endOffset &lt; upperBound : false
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.arrayconnection.connectionFromPromisedArray" id="apidoc.element.graphql-relay.arrayconnection.connectionFromPromisedArray">
+        function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>connectionFromPromisedArray
+        <span class="apidocSignatureSpan">(dataPromise, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function connectionFromPromisedArray(dataPromise, args) {
+  return dataPromise.then(function (data) {
+    return connectionFromArray(data, args);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.arrayconnection.connectionFromPromisedArraySlice" id="apidoc.element.graphql-relay.arrayconnection.connectionFromPromisedArraySlice">
+        function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>connectionFromPromisedArraySlice
+        <span class="apidocSignatureSpan">(dataPromise, args, arrayInfo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function connectionFromPromisedArraySlice(dataPromise, args, arrayInfo) {
+  return dataPromise.then(function (data) {
+    return connectionFromArraySlice(data, args, arrayInfo);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.arrayconnection.cursorForObjectInConnection" id="apidoc.element.graphql-relay.arrayconnection.cursorForObjectInConnection">
+        function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>cursorForObjectInConnection
+        <span class="apidocSignatureSpan">(data, object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cursorForObjectInConnection(data, object) {
+  var offset = data.indexOf(object);
+  if (offset === -1) {
+    return null;
+  }
+  return offsetToCursor(offset);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.arrayconnection.cursorToOffset" id="apidoc.element.graphql-relay.arrayconnection.cursorToOffset">
+        function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>cursorToOffset
+        <span class="apidocSignatureSpan">(cursor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cursorToOffset(cursor) {
+  return parseInt((0, _base.unbase64)(cursor).substring(PREFIX.length), 10);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.arrayconnection.getOffsetWithDefault" id="apidoc.element.graphql-relay.arrayconnection.getOffsetWithDefault">
+        function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>getOffsetWithDefault
+        <span class="apidocSignatureSpan">(cursor, defaultOffset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getOffsetWithDefault(cursor, defaultOffset) {
+  if (typeof cursor !== 'string') {
+    return defaultOffset;
+  }
+  var offset = cursorToOffset(cursor);
+  return isNaN(offset) ? defaultOffset : offset;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.arrayconnection.offsetToCursor" id="apidoc.element.graphql-relay.arrayconnection.offsetToCursor">
+        function <span class="apidocSignatureSpan">graphql-relay.arrayconnection.</span>offsetToCursor
+        <span class="apidocSignatureSpan">(offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function offsetToCursor(offset) {
+  return (0, _base.base64)(PREFIX + offset);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.graphql-relay.base64" id="apidoc.module.graphql-relay.base64">module graphql-relay.base64</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.base64.base64" id="apidoc.element.graphql-relay.base64.base64">
+        function <span class="apidocSignatureSpan">graphql-relay.</span>base64
+        <span class="apidocSignatureSpan">(i)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function base64(i) {
+  return new Buffer(i, 'utf8').toString('base64');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.base64.unbase64" id="apidoc.element.graphql-relay.base64.unbase64">
+        function <span class="apidocSignatureSpan">graphql-relay.base64.</span>unbase64
+        <span class="apidocSignatureSpan">(i)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function unbase64(i) {
+  return new Buffer(i, 'base64').toString('utf8');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.graphql-relay.connection" id="apidoc.module.graphql-relay.connection">module graphql-relay.connection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.connection.connectionDefinitions" id="apidoc.element.graphql-relay.connection.connectionDefinitions">
+        function <span class="apidocSignatureSpan">graphql-relay.connection.</span>connectionDefinitions
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function connectionDefinitions(config) {
+  var nodeType = config.nodeType;
+
+  var name = config.name || nodeType.name;
+  var edgeFields = config.edgeFields || {};
+  var connectionFields = config.connectionFields || {};
+  var resolveNode = config.resolveNode;
+  var resolveCursor = config.resolveCursor;
+  var edgeType = new _graphql.GraphQLObjectType({
+    name: name + 'Edge',
+    description: 'An edge in a connection.',
+    fields: function fields() {
+      return _extends({
+        node: {
+          type: nodeType,
+          resolve: resolveNode,
+          description: 'The item at the end of the edge'
+        },
+        cursor: {
+          type: new _graphql.GraphQLNonNull(_graphql.GraphQLString),
+          resolve: resolveCursor,
+          description: 'A cursor for use in pagination'
+        }
+      }, resolveMaybeThunk(edgeFields));
+    }
+  });
+
+  var connectionType = new _graphql.GraphQLObjectType({
+    name: name + 'Connection',
+    description: 'A connection to a list of items.',
+    fields: function fields() {
+      return _extends({
+        pageInfo: {
+          type: new _graphql.GraphQLNonNull(pageInfoType),
+          description: 'Information to aid in pagination.'
+        },
+        edges: {
+          type: new _graphql.GraphQLList(edgeType),
+          description: 'A list of edges.'
+        }
+      }, resolveMaybeThunk(connectionFields));
+    }
+  });
+
+  return { edgeType: edgeType, connectionType: connectionType };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.graphql-relay.mutation" id="apidoc.module.graphql-relay.mutation">module graphql-relay.mutation</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.mutation.mutationWithClientMutationId" id="apidoc.element.graphql-relay.mutation.mutationWithClientMutationId">
+        function <span class="apidocSignatureSpan">graphql-relay.mutation.</span>mutationWithClientMutationId
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mutationWithClientMutationId(config) {
+  var name = config.name,
+      description = config.description,
+      deprecationReason = config.deprecationReason,
+      inputFields = config.inputFields,
+      outputFields = config.outputFields,
+      mutateAndGetPayload = config.mutateAndGetPayload;
+
+  var augmentedInputFields = function augmentedInputFields() {
+    return _extends({}, resolveMaybeThunk(inputFields), {
+      clientMutationId: {
+        type: _graphql.GraphQLString
+      }
+    });
+  };
+  var augmentedOutputFields = function augmentedOutputFields() {
+    return _extends({}, resolveMaybeThunk(outputFields), {
+      clientMutationId: {
+        type: _graphql.GraphQLString
+      }
+    });
+  };
+
+  var outputType = new _graphql.GraphQLObjectType({
+    name: name + 'Payload',
+    fields: augmentedOutputFields
+  });
+
+  var inputType = new _graphql.GraphQLInputObjectType({
+    name: name + 'Input',
+    fields: augmentedInputFields
+  });
+
+  return {
+    type: outputType,
+    description: description,
+    deprecationReason: deprecationReason,
+    args: {
+      input: { type: new _graphql.GraphQLNonNull(inputType) }
+    },
+    resolve: function resolve(_, _ref, context, info) {
+      var input = _ref.input;
+
+      return Promise.resolve(mutateAndGetPayload(input, context, info)).then(function (payload) {
+        payload.clientMutationId = input.clientMutationId;
+        return payload;
+      });
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.graphql-relay.node" id="apidoc.module.graphql-relay.node">module graphql-relay.node</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.node.fromGlobalId" id="apidoc.element.graphql-relay.node.fromGlobalId">
+        function <span class="apidocSignatureSpan">graphql-relay.node.</span>fromGlobalId
+        <span class="apidocSignatureSpan">(globalId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function fromGlobalId(globalId) {
+  var unbasedGlobalId = (0, _base.unbase64)(globalId);
+  var delimiterPos = unbasedGlobalId.indexOf(':');
+  return {
+    type: unbasedGlobalId.substring(0, delimiterPos),
+    id: unbasedGlobalId.substring(delimiterPos + 1)
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.node.globalIdField" id="apidoc.element.graphql-relay.node.globalIdField">
+        function <span class="apidocSignatureSpan">graphql-relay.node.</span>globalIdField
+        <span class="apidocSignatureSpan">(typeName, idFetcher)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function globalIdField(typeName, idFetcher) {
+  return {
+    name: 'id',
+    description: 'The ID of an object',
+    type: new _graphql.GraphQLNonNull(_graphql.GraphQLID),
+    resolve: function resolve(obj, args, context, info) {
+      return toGlobalId(typeName || info.parentType.name, idFetcher ? idFetcher(obj, context, info) : obj.id);
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.node.nodeDefinitions" id="apidoc.element.graphql-relay.node.nodeDefinitions">
+        function <span class="apidocSignatureSpan">graphql-relay.node.</span>nodeDefinitions
+        <span class="apidocSignatureSpan">(idFetcher, typeResolver)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function nodeDefinitions(idFetcher, typeResolver) {
+  var nodeInterface = new _graphql.GraphQLInterfaceType({
+    name: 'Node',
+    description: 'An object with an ID',
+    fields: function fields() {
+      return {
+        id: {
+          type: new _graphql.GraphQLNonNull(_graphql.GraphQLID),
+          description: 'The id of the object.'
+        }
+      };
+    },
+    resolveType: typeResolver
+  });
+
+  var nodeField = {
+    name: 'node',
+    description: 'Fetches an object given its ID',
+    type: nodeInterface,
+    args: {
+      id: {
+        type: new _graphql.GraphQLNonNull(_graphql.GraphQLID),
+        description: 'The ID of an object'
+      }
+    },
+    resolve: function resolve(obj, _ref, context, info) {
+      var id = _ref.id;
+      return idFetcher(id, context, info);
+    }
+  };
+
+  var nodesField = {
+    name: 'nodes',
+    description: 'Fetches objects given their IDs',
+    type: new _graphql.GraphQLNonNull(new _graphql.GraphQLList(nodeInterface)),
+    args: {
+      ids: {
+        type: new _graphql.GraphQLNonNull(new _graphql.GraphQLList(new _graphql.GraphQLNonNull(_graphql.GraphQLID))),
+        description: 'The IDs of objects'
+      }
+    },
+    resolve: function resolve(obj, _ref2, context, info) {
+      var ids = _ref2.ids;
+      return Promise.all(ids.map(function (id) {
+        return Promise.resolve(idFetcher(id, context, info));
+      }));
+    }
+  };
+
+  return { nodeInterface: nodeInterface, nodeField: nodeField, nodesField: nodesField };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.node.toGlobalId" id="apidoc.element.graphql-relay.node.toGlobalId">
+        function <span class="apidocSignatureSpan">graphql-relay.node.</span>toGlobalId
+        <span class="apidocSignatureSpan">(type, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toGlobalId(type, id) {
+  return (0, _base.base64)([type, id].join(':'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.graphql-relay.plural" id="apidoc.module.graphql-relay.plural">module graphql-relay.plural</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.graphql-relay.plural.pluralIdentifyingRootField" id="apidoc.element.graphql-relay.plural.pluralIdentifyingRootField">
+        function <span class="apidocSignatureSpan">graphql-relay.plural.</span>pluralIdentifyingRootField
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pluralIdentifyingRootField(config) {
+  var inputArgs = {};
+  var inputType = config.inputType;
+  if (inputType instanceof _graphql.GraphQLNonNull) {
+    inputType = inputType.ofType;
+  }
+  inputArgs[config.argName] = {
+    type: new _graphql.GraphQLNonNull(new _graphql.GraphQLList(new _graphql.GraphQLNonNull(inputType)))
+  };
+  return {
+    description: config.description,
+    type: new _graphql.GraphQLList(config.outputType),
+    args: inputArgs,
+    resolve: function resolve(obj, args, context, info) {
+      var inputs = args[config.argName];
+      return Promise.all(inputs.map(function (input) {
+        return Promise.resolve(config.resolveSingleInput(input, context, info));
+      }));
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
